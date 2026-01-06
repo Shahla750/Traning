@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Personal Diary</title>
+    <link rel="stylesheet" href="diary.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- LOGIN -->
+    <div id="loginBox">
+        <h2>Login</h2>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="login()">Login</button>
+        <p id="loginMsg"></p>
+    </div>
+
+    <!-- MENU -->
+    <div id="menuBox" class="hidden">
+        <h2>My Personal Diary</h2>
+        <p id="opCount"></p>
+
+        <button onclick="showSection('addBox')">1. Enter New Diary Note</button>
+        <button onclick="showSection('updateBox')">2. Update Diary Note</button>
+        <button onclick="showSection('searchBox')">3. Search Diary Note</button>
+        <button onclick="showSection('rangeBox')">4. Display Notes by Date Range</button>
+        <button onclick="logout()">Logout</button>
+    </div>
+
+    <!-- ADD -->
+    <div id="addBox" class="hidden">
+        <h3>Add Diary Note</h3>
+        <input type="date" id="addDate">
+        <textarea id="addText"></textarea>
+        <button onclick="addNote()">Save</button>
+    </div>
+
+    <!-- UPDATE -->
+    <div id="updateBox" class="hidden">
+        <h3>Update Diary Note</h3>
+        <input type="date" id="updateDate">
+        <input type="password" id="confirmPwd" placeholder="Re-enter Password">
+        <p id="oldNote"></p>
+        <textarea id="updateText"></textarea>
+        <button onclick="updateNote()">Update</button>
+    </div>
+
+    <!-- SEARCH -->
+    <div id="searchBox" class="hidden">
+        <h3>Search Diary Note</h3>
+        <input type="date" id="searchDate">
+        <button onclick="searchNote()">Search</button>
+        <p id="searchResult"></p>
+        <button id="searchUpdateBtn" class="hidden" onclick="prepareUpdate()">Update This Note</button>
+    </div>
+
+    <!-- RANGE -->
+    <div id="rangeBox" class="hidden">
+        <h3>Diary Notes by Range</h3>
+        <input type="date" id="fromDate">
+        <input type="date" id="toDate">
+        <button onclick="showRange()">Show</button>
+        <div id="rangeResult"></div>
+    </div>
+
+</div>
+
+<script src="diary.js"></script>
+</body>
+</html>

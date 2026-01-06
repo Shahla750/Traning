@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>User Data Validation</title>
+    </head>
+    <body>
+        <form onsubmit="return validateForm()">
+            <div>
+                <label>Username:</label>
+                <input type="text" id="username">
+            </div>
+            <br>
+
+            <div>
+                <label>Passward:</label>
+                <input type="password" id="password">
+            </div>
+            <br>
+
+            <div>
+                <input type="submit" value="submit">
+            </div>
+        </form>
+
+        <script>
+            function validateForm() {
+                var username = document.getElementById("username").value;
+                var password = document.getElementById("password").value;
+
+                if (username === "") {
+                alert("Username cannot be empty");
+                return false;
+                }
+
+                if (password === "") {
+                alert("Password cannot be empty");
+                return false;
+                }
+
+                var usernamePattern = /^[A-Za-z][A-Za-z0-9_]*$/;
+                if (!usernamePattern.test(username)) {
+                alert("Username must start with a letter and contain only alphabets, digits and underscore");
+                return false;
+                }
+
+                var passwordPattern = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{8,}$/;
+                if (!passwordPattern.test(password)) {
+                alert("Password must have at least 8 characters, 1 uppercase, 1 lowercase and 1 digit");
+                return false;
+                }
+
+                alert("User data validated successfully!");
+                return true;
+            }
+        </script>
+    </body>
+</html>

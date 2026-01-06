@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Data Validation</title>
+</head>
+<body>
+
+<form>
+    <!-- Username -->
+    <label>Username:</label>
+    <input type="text"
+           name="username"
+           required
+           pattern="[A-Za-z][A-Za-z0-9_]*"
+           title="Username must start with a letter and contain only letters, digits, and underscore">
+    <br><br>
+
+    <!-- Password -->
+    <label>Password:</label>
+    <input type="password"
+           name="password"
+           required
+           pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{8,}"
+           title="Password must be at least 8 characters with 1 uppercase, 1 lowercase, and 1 digit">
+    <br><br>
+
+    <!-- Submit Button -->
+    <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>

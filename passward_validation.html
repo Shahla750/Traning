@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Passward validation</title>
+    </head>
+    <body>
+        <form>
+            <label>Passward:</label>
+            <input type="password"
+            name="password" required 
+            pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9].{8,})"
+            title="Password must contain at least 8 characters, including 1 uppercase, 1 lowercase, and 1 digit">
+            <br><br>
+            <input type="submit" name="submit">
+
+
+        </form>
+    </body>
+</html>
